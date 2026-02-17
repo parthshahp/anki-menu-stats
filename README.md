@@ -18,22 +18,22 @@ open Package.swift
 ```
 Run the `anki-menu-stats` scheme in Xcode.
 
-## Build + install locally
+## One-command release (app + DMG)
 ```bash
-swift build -c release
+./scripts/release.sh
 
-APP_NAME="Anki Menu Stats"
-APP_DIR="dist/${APP_NAME}.app"
+# Optional: real signing identity
+./scripts/release.sh --sign-identity "Developer ID Application: Your Name (TEAMID)"
+```
 
-rm -rf "$APP_DIR"
-mkdir -p "$APP_DIR/Contents/MacOS" "$APP_DIR/Contents/Resources"
-cp .build/release/anki-menu-stats "$APP_DIR/Contents/MacOS/anki-menu-stats"
-chmod +x "$APP_DIR/Contents/MacOS/anki-menu-stats"
-cp Info.plist "$APP_DIR/Contents/Info.plist"
+Artifacts are written to `dist/`:
+- `dist/Anki Menu Stats.app`
+- `dist/Anki-Menu-Stats-<version>.dmg`
 
-codesign --force --deep --sign - "$APP_DIR"
-cp -R "$APP_DIR" /Applications/
-open "/Applications/${APP_NAME}.app"
+## Install locally
+```bash
+cp -R "dist/Anki Menu Stats.app" /Applications/
+open "/Applications/Anki Menu Stats.app"
 ```
 
 ## Notes
