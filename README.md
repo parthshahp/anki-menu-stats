@@ -6,6 +6,9 @@ Minimal macOS menu bar app (SwiftUI) that shows:
 
 Data comes from a local Anki instance via AnkiConnect.
 
+<img width="332" height="279" alt="Screenshot 2026-02-16 at 10 00 35 PM" src="https://github.com/user-attachments/assets/b89c16ad-2daf-40bf-9360-bbbe4e2ead8d" />
+
+
 ## Requirements
 - macOS 14+
 - Xcode / Swift toolchain
